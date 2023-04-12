@@ -5,7 +5,7 @@ const getRandomNo = (min = 2, max = 5) => {
 };
 
 const getData = () => {
-	const data = fs.readFileSync('./data.json').toString();
+	const data = fs.readFileSync(__dirname+'/data.json').toString();
 	let newData = JSON.parse(data);
 	newData = newData.map((val, idx) => {
 		return { ...val, id: idx + 1, rating: getRandomNo() };
